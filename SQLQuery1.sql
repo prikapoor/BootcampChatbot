@@ -1,0 +1,16 @@
+﻿INSERT INTO PatientMonitors values ('Efficia', 'CM10','Small',NULL,'No','ICU','SemiUrban',NULL,NULL);
+INSERT INTO PatientMonitors values ('Efficia', 'CM100','Small',NULL,'Yes','ICU','SemiUrban',NULL,NULL);
+INSERT INTO PatientMonitors values ('Efficia', 'CM12','Large',NULL,'No','ICU','SemiUrban',NULL,NULL);
+INSERT INTO PatientMonitors values ('Efficia', 'CM120','Large',NULL,'Yes','ICU','SemiUrban',NULL,NULL);
+INSERT INTO PatientMonitors values ('Efficia', 'CM150','Large',NULL,'Yes','ICU','SemiUrban',NULL,NULL);
+INSERT INTO PatientMonitors values ('Avalon', 'FM20','Small',NULL,'No','LabourCare',NULL,'Light Weight','Antepartum');
+INSERT INTO PatientMonitors values ('Avalon', 'FM30','Small',NULL,'Standard','LabourCare',NULL,'Light Weight','Intrapartum');
+INSERT INTO PatientMonitors values ('Avalon', 'FM40','Small',NULL,'Standard','LabourCare',NULL,'Heavy Weight','Antepartum');
+INSERT INTO PatientMonitors values ('Avalon', 'FM50','Small',NULL,'Standard','LabourCare',NULL,'Heavy Weight','Intrapartum');
+INSERT INTO PatientMonitors values ('Intellivue', 'MX40','Small','Yes','Yes','ICU','Urban',NULL,NULL);
+INSERT INTO PatientMonitors values ('Intellivue', 'MX400','Small','Yes','Yes','ICU','Urban',NULL,NULL);
+INSERT INTO PatientMonitors values ('Intellivue', 'MX450','Large','Yes','Yes','ICU','Urban',NULL,NULL);
+INSERT INTO PatientMonitors values ('Intellivue', 'MX500','Large','Yes','Yes','ICU','Urban',NULL,NULL);
+INSERT INTO PatientMonitors values ('Intellivue', 'MX550','Large','Yes','Yes','ICU','Urban',NULL,NULL);
+INSERT INTO PatientMonitors values ('Intellivue', 'MX700','Large','No','Yes','ICU','Urban',NULL,NULL);
+INSERT INTO PatientMonitors values ('Intellivue', 'MX800','Large','No','Yes','ICU','Urban',NULL,NULL);

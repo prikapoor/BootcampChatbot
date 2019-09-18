@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="PhilipsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PatientMonitors">
+          <Key>
+            <PropertyRef Name="Model" />
+          </Key>
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Screen Size" Type="float" Nullable="false" />
+          <Property Name="Portability" Type="varchar" MaxLength="50" />
+          <Property Name="Touch Screen" Type="varchar" MaxLength="50" />
+          <Property Name="No of Waveforms" Type="int" />
+          <Property Name="Weight" Type="float" />
+          <Property Name="Care Stage" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Questions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Question" Type="varchar(max)" Nullable="false" />
+          <Property Name="Option 1" Type="varchar" MaxLength="50" />
+          <Property Name="Option 2" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="PhilipsDBModelStoreContainer">
+          <EntitySet Name="PatientMonitors" EntityType="Self.PatientMonitors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PhilipsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PhilipsDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PatientMonitors" EntityType="PhilipsDBModel.PatientMonitor" />
+          <EntitySet Name="Questions" EntityType="PhilipsDBModel.Question" />
+        </EntityContainer>
+        <EntityType Name="PatientMonitor">
+          <Key>
+            <PropertyRef Name="Model" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Screen_Size" Type="Double" Nullable="false" />
+          <Property Name="Portability" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Touch_Screen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="No_of_Waveforms" Type="Int32" />
+          <Property Name="Weight" Type="Double" />
+          <Property Name="Care_Stage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Question1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Option_1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Option_2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PhilipsDBModelStoreContainer" CdmEntityContainer="PhilipsDBEntities">
+          <EntitySetMapping Name="PatientMonitors">
+            <EntityTypeMapping TypeName="PhilipsDBModel.PatientMonitor">
+              <MappingFragment StoreEntitySet="PatientMonitors">
+                <ScalarProperty Name="Care_Stage" ColumnName="Care Stage" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="No_of_Waveforms" ColumnName="No of Waveforms" />
+                <ScalarProperty Name="Touch_Screen" ColumnName="Touch Screen" />
+                <ScalarProperty Name="Portability" ColumnName="Portability" />
+                <ScalarProperty Name="Screen_Size" ColumnName="Screen Size" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="PhilipsDBModel.Question">
+              <MappingFragment StoreEntitySet="Questions">
+                <ScalarProperty Name="Option_2" ColumnName="Option 2" />
+                <ScalarProperty Name="Option_1" ColumnName="Option 1" />
+                <ScalarProperty Name="Question1" ColumnName="Question" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
